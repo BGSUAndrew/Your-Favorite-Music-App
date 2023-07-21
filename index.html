@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Spotify App</title>
+        <script src="scripts.js"></script>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body class="grid" onload="onPageLoad();">
+    <section class="text-align-center">
+        <h1 class="title">Your favorite artists and songs on</h1>
+        <img class="logo" src="Spotify_Logo_RGB_Green.png" alt="Spotify Logo"/>
+    </section>
+    <section class="text-align-center background-blue">
+        <p>To begin, be sure your logged into your Spotify account. Then, click the Request Authorization button. This will allow this app to see your Spotify data. Note, I do not store any of your data. The authorization system is created by Spotify.</p>
+        <div id="selection">
+            <form>
+                <input class="button" type="button" onclick="requestAuth()" value="Request Authorization">
+            </form>
+        </div>
+    </section>
+    <section class="text-align-center background-pink">
+        <p>Authorized the app? Great! Just click the button below to see your top artists and songs from the past 6 months</p>
+        <input class="button" type="button" onclick="getArtists()" value="Get your data!">
+        <div class="text-align-center data">
+            <div class="data_padding data_list">
+                <p>Your Favorite Artists from the past 6 months</p>
+                <ol id="favorite_artist"></ol>
+            </div>
+            <div class="data_padding data_list">
+                <p>Your Favorite Songs from the past 6 months</p>
+                <ol id="favorite_songs"></ol>
+            </div>
+        </div>
+    </section>
+    <section class="background-yellow text-align-center">
+        <p>Refresh Token</p>
+        <input class="button alt_button_color" type="button" onclick="refreshAccessToken()" value="Get Tracks in Console">
+    </section>
+    </body>
+</html>
